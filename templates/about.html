@@ -1,3 +1,15 @@
 {% extends "template.html" %}
 {% block content %}
+<div style="margin-left: 10%; margin-right: 10%; color: white; min-height: 100vh;">
+    <div style="background-color: rgb(70, 70, 70); margin-left: 10%; margin-right: 10%;">
+        <h1 style="text-align: center; font-family: Cambria;vertical-align: middle; font-size: 40px;">
+            ¡Bienvenido al sitio web para mi portafolio!
+        </h1>    
+    </div>
+    <p style="text-align: justify; font-size: 35px; text-indent: 1in;">
+        El sitio web fué escrito con html a mano. Le sugiero que haga Ctrl+Shift+C y mire el html para que vea la poca experiencia que tengo. El backend es un simple programa de python usando Flask y jinja2 para el preporcesamiento del html. En total el codigo python hace solo como 20 lineas. Si usted quiere probarlo en su maquina, yo uso Pipenv para manejar dependecias.
+        <br><br>
+        Al clonar el repo, necesitaria hacer "pipenv install flask" y luego "pipenv run python main.py". Obviamente necesita instalar python3, pip y pipenv previamente.
+    </p>
+</div>
 {% endblock %}
