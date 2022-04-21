@@ -130,5 +130,21 @@ Document
         </div>
     </div>
     <br>
+    <div style="background-color: rgb(70, 70, 70); padding-left: 0.25in; padding-right: 0.25in; padding-top: 0.20in;">
+        <h2 style="font-weight: 900; font-size: 30px; text-decoration: solid; font-family: Cambria; margin-top: 0;">
+            Comunicación con el sistma operativo en alto nivel
+        </h2>
+        <p style="font-size: 20px; text-indent: 1in; text-align: justify; padding-bottom: 17px;">
+            Antes los computadores no eran lo suficientemente poderosos como para generar una intefaz gráfica para que los usarios pudiesen interactuar. Al principo solo se usaban interfaces de texto, también conocido como la linea de comandos. Este mecanismo consiste en controlar que programas se ejecutan llamandolos directamente por texto. Toda operacion a nivel del usuario que hace un sistema operativo se puede hacer usando solo teclado, escribiendo comandos. Por eso es extremadamente util aprender a manjearlo y vimos en clase cómo la interaccion con el sistema de archivos, editores de texto, ejecución de programas y busqueda de información se hace. Escribir comandos cada vez puede ser tedioso asi que todos los sistemas operativos ofrecen formas de ejecutar una secuencia de estos "comandos" automaticamente con un lenguaje de alto nivel interpretado. Los mas conocidos son bat de Windows y bash de Unix.
+        </p>
+        <div style="text-align: center; padding-bottom: 17px;">
+            <p style="text-decoration: solid; font-weight: 900; font-style: italic;">
+                Imagen de un script de bash para calcular un factorial hasta n<br>
+                Lo hice para un tarea que hicimos en clase al respecto
+            </p>
+            <img src="{{ url_for('static', filename='img7.png')}}" style="max-width: 60%;">
+        </div>
+    </div>
+    <br>
 </div>
 {% endblock %}
