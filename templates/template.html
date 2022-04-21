@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %} | La pagina cool de Asier</title>
+    </head>
+    <body style="margin: 0; background-color: rgb(36, 36, 36);">
+        <div class="navbar" style="background-color: rgb(56, 56, 56); position: sticky; top: 0; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white;">
+            <h1 style="margin-top: 0; padding-top: 8px; margin-bottom: 0px; padding-bottom: 4px; padding-left: 8px;">
+                Portafolio de Asier Ochoa Blanco
+            </h1>
+            <div style="min-height: 2px; background-color: white; border-left: 0;">
+            </div>
+            <h2 style="margin-top: 0; text-align: center; padding-top: 4px; margin-top: 0px; padding-bottom: 4px; padding-left: 8px;">
+                <a href="{{ url_for('routes.get_homepage')}}" style="color: white; text-decoration: none;">Homepage</a> | 
+                <a href="{{ url_for('routes.get_document')}}" style="color: white; text-decoration: none">Document</a> | 
+                <a href="{{ url_for('routes.get_about')}}" style="color: white; text-decoration: none">About</a>
+            </h2>
+        </div>
+        {% block content %}
+        {% endblock %}
+        <footer style="position: sticky; bottom: 0%; color: white; background-color: rgb(56, 56, 56); width: 100vw; margin: 0; max-width: 100%;">
+            <h2 class="footText" style="margin: 0; font-size: medium; padding-left: 4px; padding-right: 4px; vertical-align: middle;">
+                ID: 1101331 | Profesor: Edwin Pérez
+                <span>
+                    <h2 style="float: right; margin: 0; font-size: medium; padding-left: 4px; padding-right: 4px; vertical-align: middle;">
+                        Trabajo final de INS371
+                    </h2>
+                </span>
+            </h2>
+        </footer>
+    </body>
+</html>

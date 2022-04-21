@@ -1,0 +1,20 @@
+{% extends "template.html" %}
+{% block title %}
+Home
+{% endblock %}
+{% block content %}
+<div style="margin-left: 10%; margin-right: 10%; color: white; min-height: 100vh;">
+    <div style="background-color: rgb(70, 70, 70); margin-left: 10%; margin-right: 10%;">
+        <h1 style="text-align: center; font-family: Cambria;vertical-align: middle; font-size: 40px;">
+            ¡Bienvenido al sitio web para mi portafolio!
+        </h1>    
+    </div>
+    <div style="text-align: center;">
+        <img src="{{ url_for('static', filename='homepage.jpg')}}" style="max-width: 37%;">
+    </div> 
+    <p style="text-align: justify; font-size: 20px; text-indent: 1in;">
+        Tengo que admitir que la idea de hacer mi portafolio no fue la más original. Me inspiré del estudiante que entregó su trabajo en HTML, con el objetivo de construir un sitio web estático, hosteado en mi servidor personal.<br><br>
+        Ha sido una buena experiencia para aprender desarrollo front-end (el cual nunca me ha gustado, hasta ahora) y darle un toque especial a mi trabajo final. Los detalles del codigo fuente estan en la página "About" y el portafolio en si está en la página "Document".
+    </p>
+</div>
+{% endblock %}

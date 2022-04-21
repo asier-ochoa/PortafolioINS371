@@ -1,0 +1,103 @@
+{% extends "template.html" %}
+{% block title %}
+Document
+{% endblock %}
+{% block content %}
+<div style="margin-left: 17%; margin-right: 17%; color: white; min-height: 100vh;">
+    <div style="background-color: rgb(70, 70, 70); margin-left: 10%; margin-right: 10%;">
+        <h1 style="text-align: center; font-family: Cambria;vertical-align: middle; font-size: 40px;">
+            Portafolio de arquitectura del computador - INS371
+        </h1>    
+        
+    </div>
+    <div style="background-color: rgb(70, 70, 70); padding-left: 0.25in; padding-right: 0.25in; padding-top: 0.20in;">
+        <h2 style="font-weight: 900; font-size: 30px; text-decoration: solid; font-family: Cambria; margin-top: 0;">
+            Introducción
+        </h2>
+        <p style="font-size: 20px; text-indent: 1in; text-align: justify; padding-bottom: 17px;">
+            La clase de arquitectura del computador trata sobre aprender y conocer los mecanismos que nos permiten efectuar tantas de nuestras tareas. El material visto trata con los conceptos base usados en el diseño de una computadora. Vimos temas tan fundacionales como la codificación de caracteres en binario, vías de comunicación de componentes y unidades de control junto a la expolración del vocabulario usado en el mundo de los computadores, programación en assembler y una pizca de diseño de sistemas operativos.
+            <br><br>
+            En este portafolio estaré presentando mi aprendizaje a lo largo del trimistre, detallando los materiales vistos en clase y adjuntando material externo de gran interés. Estaré adjuntando videos e imágenes cuando sea relevante.
+        </p>
+    </div>
+    <br>
+    <div style="background-color: rgb(70, 70, 70); padding-left: 0.25in; padding-right: 0.25in; padding-top: 0.20in;">
+        <h2 style="font-weight: 900; font-size: 30px; text-decoration: solid; font-family: Cambria; margin-top: 0;">
+            La base de la comunicación
+        </h2>
+        <p style="font-size: 20px; text-indent: 1in; text-align: justify; padding-bottom: 17px;">
+            Para que un computador pueda ser de cualquier utilidad, necesita poder guardar y luego por hacer operaciones en datos. Sabemos que los computadores forman su base en binario revisando si un voltaje se encuentra encima o debajo de un nivel definido. ¿Entonces cómo podríamos nosotros representar todos los caracteres de un idioma usando solo dos numero posibles? Por suerte no somos los primeros en pensar en ello. En clase vimos los distintos sistemas de codificación que pueden ser usados en un computador, en conjunto a explorar los sistemas numéricos (decimal, binario, hexadecimal, octal, etc...)
+            <br><br>
+            Yo ya tenía ciertos conocimientos previos sobre la codificación de caracteres a digital, lo cual me permitió investigar una seria de temas un poco menos conocidos. La historia de ASCII tiene una serie de detalles muy interesantes que nos pueden enseñar sobre las decisiones de los diseñadores de estos estándares de codificación. ASCII usa 7 bits para codificar un carácter, asi permitiendonos alinear un símbolo con byte en memoria. Este espacio es suficiente para codificar las 26 letras en minúscula y mayúscula de inglés además de símbolos de puntuacion y caracteres de control para máquinas de escribir. Sin embargo, ¿Cómo otros idiomas podrián incluir sus caracteres? (tildes, letras especiales, puntuación extra, etc...). De ahí se decida usar el bit extra para generar más símbolos. Esto lo llaman "codepages" de ASCII extendido y cada sistema operativo y computador tenía el suyo propio.
+        </p>
+        <div style="text-align: center;">
+            <p style="text-decoration: solid; font-weight: 900; font-style: italic;">
+                Tabla de dos "codepages" distintos para MS-DOS
+            </p>
+            <img src="{{ url_for('static', filename='img1.png')}}" style="max-width: 80%;">
+        </div> 
+        <br>
+        <p style="font-size: 20px; text-indent: 1in; text-align: justify; padding-bottom: 17px;">
+            Pese a ser una solución que se aprovecha de los recursos disponibles en la época, rapidaménte se fueron viendo las limitaciónes de este sistema. En los años 90, los correos electronicos podian verse totalmente distintos dependiendo del codepage del receptor. Ya uno puede imaginarse la cantidad de problemas que eso puede causar en un mundo tan interconectado. Muchas horas fueron malgastadas debido a caracteres incorrectos apareciendo en las bandejas de entrada en computadores al rededor del mundo.
+            <br><br>
+            Como solución se creó UTF, un estándar para incluir todos los caracteres que se usan y se han usado en algun punto de la historia para la comunicación entre humanos. Al igual que ASCII extendido, UTF trata de mantener compadibilidad con el viejo estandar y aprovechar los recursos a disposición. Aqui dejo un video muy interesante al respecto.
+            <div style="text-align: center; padding-bottom: 17px;">
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/MijmeoH9LT4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </p>
+    </div>
+    <br>
+    <div style="background-color: rgb(70, 70, 70); padding-left: 0.25in; padding-right: 0.25in; padding-top: 0.20in;">
+        <h2 style="font-weight: 900; font-size: 30px; text-decoration: solid; font-family: Cambria; margin-top: 0;">
+            ¿Cómo computa un computador?
+        </h2>
+        <p style="font-size: 20px; text-indent: 1in; text-align: justify; padding-bottom: 17px;">
+            Al final del día, lo único que hace un computador es completar o no completar circuitos electricos. Gran parte de sus operaciónes solo tienen 2 estados; sí o no, apagado o prendido, 1 o 0, <span style="font-weight: 900;">binario.</span> Un tal George Boole hace más de un siglo ya estaba pensando en los mecanismo de operar podiendo usar solo 2 símbolos, de aquí nace entonces el álgebra de Boole. Como el álgebra común, Boole encontró patrones y reglas que facilitan operaciones matemáticas pero en vez de tener 10 caracteres a su disposición, como en decimal, él solo podía usar dos: 1 y 0.
+            <br><br>
+            Los computadores, al poder solo guardar información en binario, son el perfecto candidato para aplicar este conocimiento. Una suma de dos numeros se efectura compuertas logicas, elementos cuya salida puede ser 0 o 1 dependiendo de sus entradas. Combinando suficientes de estas compuertas, uno puede efectuar cualquier computación imaginable. Para describir una maquina con estas capacidades, Alain Turing publicó un escrito detallando que es lo que se necesita para poder se considerado "Turing Complete", es decir que puede computar cualquier operación.
+            <br><br>
+            Como humanos, nos resulta dificil pensar que con solo dos caracteres uno puede calcular cualquier resultado ya que hemos aprendido a contar con el sistema decimal. Al final del día, da igual cuantos numeros se cuentan, las reglas algebraicas simples siguen siendo las mismas, sean 2 caracteres por dígito o sean 16 caracteres por dígito. Los computadores, al ser maquinas, no discriminan al hora de operar sobre un sistema numerico, pero nosotros como humanos sí. Para mejor entender este concepto, exploramos en clase los sistmas númericos más comunes (binario, octal, decimal, hexadecimal y yo intenté mencionar base64) y como convertir entre ellos.
+        </p>
+        <div style="text-align: center;">
+            <p style="text-decoration: solid; font-weight: 900; font-style: italic;">
+                Tabla de la verdad para las compuertas logicas más simples<br>
+                El resto de compuertas se derivan de estas
+            </p>
+            <img src="{{ url_for('static', filename='img2.png')}}" style="max-width: 80%;">
+        </div>
+        <div style="text-align: center; padding-bottom: 17px;">
+            <p style="text-decoration: solid; font-weight: 900; font-style: italic;">
+                Usamos software de sumlación logica para mejor entender estos conceptos<br>
+                Captura de pantalla de logisim, la herramienta que decidí usar
+            </p>
+            <img src="{{ url_for('static', filename='img3.png')}}" style="max-width: 50%;">
+        </div>
+    </div>
+    <br>
+    <div style="background-color: rgb(70, 70, 70); padding-left: 0.25in; padding-right: 0.25in; padding-top: 0.20in;">
+        <h2 style="font-weight: 900; font-size: 30px; text-decoration: solid; font-family: Cambria; margin-top: 0;">
+            Maquinas que computan
+        </h2>
+        <p style="font-size: 20px; text-indent: 1in; text-align: justify; padding-bottom: 17px;">
+            A este punto del trimestre, ya teníamos todos los bloques que forman la base de la computación. Ahora nos faltaba ver como se ven estos conceptos aplicados en la práctica. Empezamos viendo cómo se ven los interiores de los computadores hoy en día. Ya que he experimentado con computadores desde niño, gran parte del vocabulario que se introdujo esta semana yo ya lo conocía. Aún asi, me pareció interesante que en República Dominicana, a un computador entro lo llaman coloquialmente CPU, lo que en realidad significa <span style="font-weight: 900;">C</span>entral <span style="font-weight: 900;">P</span>rocessing <span style="font-weight: 900;">U</span>nit.
+            <br><br>
+            Como actividad en clase, vimos cartas madres, discos duros, memoria ram y fuentes de alimentación. En conjunto a esto, fuimos discutiendo sobre lo que conocemos al respecto y datos interesantes sobre la interconexión de cada componenete. Considero que, pese a ya conocer gran parte de lo visto, es una experiencia valiosa e interesante explorar lo tangible de la computación tras investigar lo teórico justo antes.
+        </p>
+        <div style="text-align: center; padding-bottom: 17px;">
+            <p style="text-decoration: solid; font-weight: 900; font-style: italic;">
+                Izq. Carta madre de un Commodore 64 | Dch. Carta madre con un Intel 486DX<br>
+                Esta imagen ilustra el progreso de los computadores personales de los años 80 hasta los 90
+            </p>
+            <img src="{{ url_for('static', filename='img4.png')}}" style="max-width: 80%;">
+        </div>
+    </div>
+    <div style="background-color: rgb(70, 70, 70); padding-left: 0.25in; padding-right: 0.25in; padding-top: 0.20in;">
+        <h2 style="font-weight: 900; font-size: 30px; text-decoration: solid; font-family: Cambria; margin-top: 0;">
+            ¿Cómo podemos dar órdenes?
+        </h2>
+        <p style="font-size: 20px; text-indent: 1in; text-align: justify; padding-bottom: 17px;">
+            
+        </p>
+    </div>
+</div>
+{% endblock %}
