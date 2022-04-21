@@ -85,19 +85,50 @@ Document
         </p>
         <div style="text-align: center; padding-bottom: 17px;">
             <p style="text-decoration: solid; font-weight: 900; font-style: italic;">
-                Izq. Carta madre de un Commodore 64 | Dch. Carta madre con un Intel 486DX<br>
+                Izq. Carta madre de un Commodore 64 | Der. Carta madre con un Intel 486DX<br>
                 Esta imagen ilustra el progreso de los computadores personales de los años 80 hasta los 90
             </p>
             <img src="{{ url_for('static', filename='img4.png')}}" style="max-width: 80%;">
         </div>
     </div>
+    <br>
     <div style="background-color: rgb(70, 70, 70); padding-left: 0.25in; padding-right: 0.25in; padding-top: 0.20in;">
         <h2 style="font-weight: 900; font-size: 30px; text-decoration: solid; font-family: Cambria; margin-top: 0;">
             ¿Cómo podemos dar órdenes?
         </h2>
         <p style="font-size: 20px; text-indent: 1in; text-align: justify; padding-bottom: 17px;">
-            
+            ¿De qué uso es un computador si no le puedes decir que hacer? Tenemos que programarlas. Cómo ya hemos establecido, estas maquinas no nos entienden como personas. Tenemos que hablarles en su propio lenguaje y ese lenguaje esta compuesto completamente de unos y zeros. Por suerte alguien tuvo un brillante idea para crear una interfaz.
+            <br><br>
+            Los CPU tienen una tabla interna de circuitos diminutos con sus direcciones que contienen todas las operaciones posibles. En teoría, un puede pasarle al CPU por sus pins de datos señales altas y señales bajas en orden y uno acabaría con una secuencia de instrucciones para el computador. Es obvio que esto no es práctico. ¿Por qué no tener un programa que convierta texto en señales electricas que el CPU pueda entender? De aquí nace el ensamblador.
         </p>
+        <div style="text-align: center; padding-bottom: 17px;">
+            <p style="text-decoration: solid; font-weight: 900; font-style: italic;">
+                Un pequeño ejemplo de la difrencia entre ensamblador y codigo máquina
+            </p>
+            <img src="{{ url_for('static', filename='img5.svg')}}" style="max-width: 30%;">
+        </div>
+        <br>
+        <p style="font-size: 20px; text-indent: 1in; text-align: justify; padding-bottom: 17px;">
+            El lenugaje ensamblador es el que se encuentra más cercano al codigo máquina del computador. Esta ligera abstración solo remplaza el codigo binario (generalmente escrito en hexadecimal) por palabras de pocos caracteres y símbolos como "," y ":" para exponer la estructura de un programa. Cada instrucción se puede denominar unaria o binaria (en CPUs viejos, los más modernos tienen muchas extensiones), referiendose a sus paramatros. Una instruccion necesita datos sobre los cuales operar, en este caso se guardan primero en los registros de uso general: la memoria más rápida y más cercana al CPU, pero también la más cara.
+            <br><br>
+            Al estar tan apegado al procesador, ensamblador requiere de un alto conocimiento del funcionamiento del procesador en cuestión. En clase nosotros vimos ejemplos de asembler x86, especificamente 386 y 8086, usando DOSBOX como simulador y el ensamblador de borland para visualizar sus efectos en memoria. Cuando la arquitectura 8086 fué diseñada, ya existian compiladores de lenguajes un poco más abstraidos del bajo nivel y su lenguaje ensamblador refleja esto. Estaba mas bien diseñado para que los programadores de compilador pudiesen mejorarlos. Por esta razón yo considero que asembler 8086 puede ser muy complejo. Personalmente, empezar con procesadores 8 bit como el Z80 y 6502 es más simple para empezar.
+        </p>
+        <div style="text-align: center; padding-bottom: 17px;">
+            <p style="text-decoration: solid; font-weight: 900; font-style: italic;">
+                Video comparando C, un lenguaje de relativo alto nivel, con ensamblador x86 moderno<br>
+                Considero que es una buena herramienta pedagogica para ilustrar el funcionamiento de ensamblador
+            </p>
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/yOyaJXpAYZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div style="text-align: center; padding-bottom: 17px;">
+            <p style="text-decoration: solid; font-weight: 900; font-style: italic;">
+                La documentación de GCC tiene muy buena información sobre la interacción de ensamblador con el sístema operativo<br>
+                Elaboran sobre la memoria virtual, codigos de comunicación, pipes, streams y mucho más<br>
+                <a href="https://gcc.gnu.org/onlinedocs/gcc-11.3.0/gcc/" style="color: white;">enlace</a>
+            </p>
+            <img src="{{ url_for('static', filename='img6.png')}}" style="max-width: 30%;">
+        </div>
     </div>
+    <br>
 </div>
 {% endblock %}
